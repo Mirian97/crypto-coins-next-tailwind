@@ -7,7 +7,7 @@ const Home = () => {
 
   return (
     <div
-      className={`bg-[url('/image/bitcoin-background.png')] bg-no-repeat bg-center bg-cover min-h-screen p-10`}
+      className={`bg-[url('/image/bitcoin-background.png')] bg-no-repeat bg-center bg-cover bg-fixed min-h-screen p-10`}
     >
       <div className='w-full flex flex-row items-center justify-center gap-5 flex-wrap'>
         {cryptos.map(
