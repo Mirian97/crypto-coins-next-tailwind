@@ -1,19 +1,30 @@
+'use client'
 import Card from '@/components/Card'
+import useGlobal from '@/hooks/useGlobal'
 
-const Home = () => (
-  <div
-    className={`bg-[url('/image/bitcoin-background.png')] bg-no-repeat bg-center bg-cover min-h-screen p-10`}
-  >
-    <div className='w-full flex flex-row items-center justify-center gap-5 flex-wrap'>
-      <Card
-        name='Bitcoin'
-        image='https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg'
-        symbol='btc'
-        currentValue={12398493}
-        currentPercentage={-0.24}
-      />
+const Home = () => {
+  const { cryptos } = useGlobal()
+
+  return (
+    <div
+      className={`bg-[url('/image/bitcoin-background.png')] bg-no-repeat bg-center bg-cover bg-fixed min-h-screen p-10`}
+    >
+      <div className='w-full flex flex-row items-center justify-center gap-5 flex-wrap'>
+        {cryptos.map(
+          ({ id, name, image, symbol, current_price, price_change_percentage_24h }) => (
+            <Card
+              key={id}
+              name={name}
+              image={image}
+              symbol={symbol}
+              currentValue={current_price}
+              currentPercentage={price_change_percentage_24h}
+            />
+          )
+        )}
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 export default Home

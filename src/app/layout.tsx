@@ -1,3 +1,4 @@
+import { GlobalProvider } from '@/contexts/GlobalContext'
 import '@/styles/global.css'
 import { Exo } from 'next/font/google'
 
@@ -10,8 +11,10 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='pt-br'>
-      <body className={exo.className}>{children}</body>
-    </html>
+    <GlobalProvider>
+      <html lang='pt-br'>
+        <body className={exo.className}>{children}</body>
+      </html>
+    </GlobalProvider>
   )
 }
