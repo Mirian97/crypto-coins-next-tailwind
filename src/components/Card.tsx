@@ -20,7 +20,7 @@ const Card = ({ name, image, currentValue, currentPercentage, symbol }: CardProp
         <h1 className='text-sm text-gray-800'>{name}</h1>
       </div>
     </div>
-    <h2 className='font-bold text-2xl ml-3'>{formatNumberToMoney(currentValue)}</h2>
+    <h2 className='font-bold text-2xl ml-4'>{formatNumberToMoney(currentValue)}</h2>
     <div className='flex flex-row justify-end items-center gap-2'>
       <h3 className='text-md text-gray-400 font-bold'>
         {formatNumberToPercentage(currentPercentage)}
