@@ -2,7 +2,7 @@
 import Card from '@/components/Card'
 import useGlobal from '@/hooks/useGlobal'
 import Image from 'next/image'
-import PeopleBitcoin from '~/icon/people.svg'
+import PeopleBitcoin from '~/svg/person.svg'
 
 const Home = () => {
   const { cryptos } = useGlobal()
