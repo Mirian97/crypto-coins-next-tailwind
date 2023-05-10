@@ -1,7 +1,8 @@
-import { Inter } from 'next/font/google'
-import 'styles/global.css'
+import { GlobalProvider } from '@/contexts/GlobalContext'
+import '@/styles/global.css'
+import { Exo } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const exo = Exo({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Crypto Coins',
@@ -10,8 +11,10 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='pt-br'>
-      <body className={inter.className}>{children}</body>
-    </html>
+    <GlobalProvider>
+      <html lang='pt-br'>
+        <body className={exo.className}>{children}</body>
+      </html>
+    </GlobalProvider>
   )
 }
