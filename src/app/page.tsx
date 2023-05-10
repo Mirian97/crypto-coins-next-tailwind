@@ -1,4 +1,5 @@
 'use client'
+import ArrowUp from '@/components/ArrowUp'
 import Card from '@/components/Card'
 import useGlobal from '@/hooks/useGlobal'
 import Image from 'next/image'
@@ -48,6 +49,7 @@ const Home = () => {
           )
         )}
       </section>
+      <ArrowUp />
     </main>
   )
 }
