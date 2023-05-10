@@ -1,7 +1,7 @@
 import { formatNumberToMoney, formatNumberToPercentage } from '@/utils/formatters'
 import Image from 'next/image'
-import DecreaseIcon from '~/icon/decrease-icon.svg'
-import IncreaseIcon from '~/icon/increase-icon.svg'
+import DecreaseIcon from '~/svg/decrease-icon.svg'
+import IncreaseIcon from '~/svg/increase-icon.svg'
 
 interface CardProps {
   name: string
