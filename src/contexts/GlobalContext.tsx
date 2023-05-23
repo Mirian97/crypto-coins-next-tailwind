@@ -1,12 +1,15 @@
 'use client'
 import useGlobalProvider from '@/hooks/useGlobalProvider'
 import { ICryptoCoins } from '@/interfaces/crypto'
-import { createContext } from 'react'
+import { ICurrentCrypto } from '@/interfaces/currentCripto'
+import { Dispatch, SetStateAction, createContext } from 'react'
 
 interface IGlobalContextData {
   openModal: boolean
   handleToggleModal: () => void
   cryptos: ICryptoCoins[]
+  currentCrypto: ICurrentCrypto
+  setCurrentCrypto: Dispatch<SetStateAction<ICurrentCrypto>>
 }
 
 const GlobalContext = createContext<IGlobalContextData>({} as IGlobalContextData)
