@@ -1,4 +1,4 @@
-'use client'
+'use-client'
 import { ICryptoCoins } from '@/interfaces/crypto'
 import { getCryptoCoins } from '@/services/crypto'
 import { useEffect, useState } from 'react'
@@ -7,7 +7,13 @@ const useGlobalContextProvider = () => {
   const [cryptos, setCryptos] = useState<ICryptoCoins[]>([])
   const [openModal, setOpenModal] = useState<boolean>(false)
   const handleToggleModal = () => setOpenModal(!openModal)
-  // const [currentCrypto, setCurrentCrypto] = useState<ICryptoCoins>({})
+  const [currentCrypto, setCurrentCrypto] = useState({
+    id: 0,
+    name: '',
+    image: '',
+    currentValue: '',
+    sparklinesIn7Days: []
+  })
 
   useEffect(() => {
     const handleGetCryptoCoins = async () => {
@@ -16,11 +22,12 @@ const useGlobalContextProvider = () => {
     }
     handleGetCryptoCoins()
   }, [])
-
   return {
     openModal,
     handleToggleModal,
-    cryptos
+    cryptos,
+    currentCrypto,
+    setCurrentCrypto
   }
 }
 
