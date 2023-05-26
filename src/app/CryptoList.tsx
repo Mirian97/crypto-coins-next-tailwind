@@ -1,10 +1,9 @@
-'use client'
 import Card from '@/components/Card'
-import useGlobal from '@/hooks/useGlobal'
 import { ICryptoCoins } from '@/interfaces/crypto'
+import { getCryptoCoins } from '@/services/crypto'
 
-const CryptoList = () => {
-  const { cryptos } = useGlobal()
+const CryptoList = async () => {
+  const cryptos = await getCryptoCoins()
   return (
     <section
       id='view-cryptocurrencies'
