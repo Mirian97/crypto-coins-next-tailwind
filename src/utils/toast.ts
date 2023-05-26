@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify'
 
-export function messageError(messageContent: string) {
+export function messageError(messageContent: string = 'Falha interna') {
   toast.error(messageContent, {
     position: 'top-center',
     autoClose: 2500,
