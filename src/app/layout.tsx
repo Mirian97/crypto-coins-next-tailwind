@@ -11,21 +11,19 @@ export const metadata = {
   description: 'Website for you to stay updated about cryptocurrencies'
 }
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <GlobalProvider>
-      <html lang='pt-br'>
-        <body className={exo.className}>
-          <div
-            className={`min-h-screen bg-[url('/image/bitcoin-background.png')] bg-no-repeat bg-center bg-cover bg-fixed`}
-          >
-            {children}
-          </div>
-          <ToastContainer />
-        </body>
-      </html>
-    </GlobalProvider>
-  )
-}
+const RootLayout = ({ children }: { children: React.ReactNode }) => (
+  <html lang='pt-br'>
+    <body className={exo.className} suppressHydrationWarning={true}>
+      <GlobalProvider>
+        <div
+          className={`min-h-screen bg-[url('/image/bitcoin-background.png')] bg-no-repeat bg-center bg-cover bg-fixed`}
+        >
+          {children}
+        </div>
+        <ToastContainer />
+      </GlobalProvider>
+    </body>
+  </html>
+)
 
 export default RootLayout
