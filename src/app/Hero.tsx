@@ -3,7 +3,7 @@ import Image from 'next/image'
 import PeopleBitcoin from '~/svg/person.svg'
 
 const Hero = () => (
-  <section className='flex flex-col items-center justify-center py-24 relative max-w-4xl m-auto'>
+  <section className='flex flex-col items-center justify-center py-32 relative max-w-4xl m-auto'>
     <h1 className='sm:text-5xl font-extrabold text-center text-white text-3xl px-2'>
       Being up to date on the main
       <span className='text-blue-700'> cryptocurrencies</span> has never been so
