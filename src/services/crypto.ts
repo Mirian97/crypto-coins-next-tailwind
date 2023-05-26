@@ -8,7 +8,7 @@ export const getCryptoCoins = async () => {
     )
     return data
   } catch (error) {
-    messageError()
+    return messageError()
   }
 }
 
