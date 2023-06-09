@@ -39,13 +39,13 @@ const CryptoList = () => {
           Search by crypto name:
         </label>
         <input
-          className='mx-3 p-2 w-72 rounded-xl focus:border-2 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1'
+          className='mx-3 p-2 w-72 rounded-xl border-2 outline-none ring-blue-900 border-blue-900 focus:border-sky-500 focus:ring-sky-500 ring-1'
           id='crypto-name'
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
       <section className='max-w-7xl flex flex-row items-center justify-center gap-5 flex-wrap m-auto px-2 pt-4 pb-16'>
-        {cryptos.length === 0 && search.length ? (
+        {cryptos?.length === 0 && search.length ? (
           <p className='text-white text-xl font-bold'>No cryptocurrency was found</p>
         ) : (
           cryptos?.map(
