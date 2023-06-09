@@ -9,28 +9,26 @@ const CryptoList = () => {
   const [cryptos, setCryptos] = useState<ICryptoCoins[]>([])
   const [search, setSearch] = useState<string>('')
 
-  const handleGetCryptoCoins = async (searchValue: string) => {
+  const handleGetCryptoCoins = async () => {
     try {
       const data: ICryptoCoins[] = await getCryptoCoins()
-      if (searchValue) {
-        const filteredCryptos = data.filter((crypto) =>
-          crypto.name.toLowerCase().includes(searchValue.toLowerCase())
-        )
-        return setCryptos(filteredCryptos)
-      }
-      return setCryptos(data)
+      setCryptos(data)
     } catch (error) {
       return messageError()
     }
   }
 
   useEffect(() => {
-    handleGetCryptoCoins(search)
-  }, [search])
-
-  useEffect(() => {
-    handleGetCryptoCoins(search)
+    handleGetCryptoCoins()
   }, [])
+
+  const handleSearch = (searchValue: string) => {
+    setSearch(searchValue)
+  }
+
+  const filteredCryptos = cryptos.filter((crypto) =>
+    crypto.name.toLowerCase().includes(search.toLowerCase())
+  )
 
   return (
     <div id='view-cryptocurrencies'>
@@ -41,14 +39,15 @@ const CryptoList = () => {
         <input
           className='mx-3 p-2 w-72 rounded-xl border-2 outline-none ring-blue-900 border-blue-900 focus:border-sky-500 focus:ring-sky-500 ring-1'
           id='crypto-name'
-          onChange={(e) => setSearch(e.target.value)}
+          value={search}
+          onChange={(e) => handleSearch(e.target.value)}
         />
       </div>
       <section className='max-w-7xl flex flex-row items-center justify-center gap-5 flex-wrap m-auto px-2 pt-4 pb-16'>
-        {cryptos?.length === 0 && search.length ? (
+        {filteredCryptos.length === 0 && search.length ? (
           <p className='text-white text-xl font-bold'>No cryptocurrency was found</p>
         ) : (
-          cryptos?.map(
+          filteredCryptos.map(
             ({
               id,
               name,
