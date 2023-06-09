@@ -53,8 +53,7 @@ const Modal = ({
     const toggleBodyScroll = (toggle: boolean) => {
       document.body.style.overflow = toggle ? 'hidden' : 'auto'
     }
-    if (openModal) toggleBodyScroll(true)
-    return () => toggleBodyScroll(false)
+    toggleBodyScroll(openModal)
   }, [openModal])
 
   const renderPriceCard = (description: string, price: number) => (
@@ -67,7 +66,7 @@ const Modal = ({
   return (
     <>
       {openModal && (
-        <div className='flex flex-row items-center justify-center bg-gray-900 bg-opacity-70 backdrop-filter backdrop-blur-md min-h-full min-w-full fixed inset-0'>
+        <div className='flex flex-row items-center justify-center bg-gray-900 bg-opacity-70 backdrop-filter backdrop-blur-md min-h-full min-w-full fixed inset-0 z-[3]'>
           <div className='bg-white w-96 rounded-xl px-4 pt-4 pb-6 relative flex flex-col'>
             <XIcon
               className='absolute top-4 right-4 cursor-pointer'
