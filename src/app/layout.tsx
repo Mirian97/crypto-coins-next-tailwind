@@ -15,11 +15,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang='pt-br'>
     <body className={exo.className} suppressHydrationWarning={true}>
       <GlobalProvider>
-        <div
-          className={`min-h-screen bg-[url('/image/bitcoin-background.png')] bg-no-repeat bg-center bg-cover bg-fixed`}
-        >
-          {children}
-        </div>
+        {children}
         <ToastContainer />
       </GlobalProvider>
     </body>
