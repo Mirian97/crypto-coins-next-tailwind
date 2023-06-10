@@ -46,6 +46,8 @@ const Modal = ({
 
   const handleCloseModal = () => {
     closeModal()
+    setPreviousDate('')
+    setPreviousPrice(0)
     reset()
   }
 
