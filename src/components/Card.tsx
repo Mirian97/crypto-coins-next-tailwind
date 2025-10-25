@@ -33,14 +33,14 @@ const Card = ({
 
   return (
     <div
-      className='w-56 bg-white rounded-2xl p-4 flex-column cursor-pointer transition duration-500 hover:-translate-y-1.5'
+      className='w-56 bg-white rounded-2xl p-4 flex-column cursor-pointer transition duration-500 hover:scale-105 hover:-translate-y-1.5'
       onClick={handleOpenModal}
     >
       <div className='flex flex-row gap-3 mb-2'>
         <Image src={image} alt={name} width={50} height={50} />
         <div>
           <h2 className='text-lg uppercase font-bold'>{symbol}</h2>
-          <h1 className='text-sm text-gray-800'>{name}</h1>
+          <h1 className='text-sm text-gray-800 line-clamp-1'>{name}</h1>
         </div>
       </div>
       <h2 className='font-bold text-2xl ml-4'>{formatNumberToMoney(currentValue)}</h2>
