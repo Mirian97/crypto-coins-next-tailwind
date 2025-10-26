@@ -33,19 +33,34 @@ const Card = ({
 
   return (
     <div
-      className='w-56 bg-white rounded-2xl p-4 flex-column cursor-pointer transition duration-500 hover:scale-105 hover:-translate-y-1.5'
+      role='button'
+      tabIndex={0}
+      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && handleOpenModal()}
+      className='w-56 bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-4 flex-column cursor-pointer transition duration-200 hover:scale-105 hover:-translate-y-1.5 shadow-md border border-gray-800'
       onClick={handleOpenModal}
     >
-      <div className='flex flex-row gap-3 mb-2'>
-        <Image src={image} alt={name} width={50} height={50} />
+      <div className='flex flex-row gap-3 mb-2 items-center'>
+        <Image
+          src={image}
+          alt={name}
+          width={50}
+          height={50}
+          className='rounded-full ring-1 ring-white/10'
+        />
         <div>
-          <h2 className='text-lg uppercase font-bold'>{symbol}</h2>
-          <h1 className='text-sm text-gray-800 line-clamp-1'>{name}</h1>
+          <h2 className='text-lg uppercase font-bold text-white'>{symbol}</h2>
+          <h1 className='text-sm text-gray-300 line-clamp-1'>{name}</h1>
         </div>
       </div>
-      <h2 className='font-bold text-2xl ml-4'>{formatNumberToMoney(currentValue)}</h2>
+      <h2 className='font-bold text-2xl ml-4 text-white'>
+        {formatNumberToMoney(currentValue)}
+      </h2>
       <div className='flex flex-row justify-end items-center gap-2'>
-        <h3 className='text-lg text-gray-500 font-bold'>
+        <h3
+          className={`text-lg font-bold ${
+            currentPercentage > 0 ? 'text-emerald-400' : 'text-rose-400'
+          }`}
+        >
           {formatNumberToPercentage(currentPercentage)}
         </h3>
         <Image
@@ -55,7 +70,7 @@ const Card = ({
           height={12}
         />
       </div>
-      <h3 className='text-xs ml-auto text-gray-500 font-medium w-32 text-right mt-1'>
+      <h3 className='text-xs ml-auto text-gray-400 font-medium w-32 text-right mt-1'>
         Price change in % in the last 24 hours
       </h3>
     </div>
