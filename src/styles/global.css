@@ -16,7 +16,8 @@
 }
 
 body {
-  background-image: url('/image/bitcoin-background.png');
+  background-image: url('/image/bitcoin-background.png'),
+    linear-gradient(to bottom, #0f2027, #000);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
