@@ -36,7 +36,9 @@ const Card = ({
       role='button'
       tabIndex={0}
       onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && handleOpenModal()}
-      className='w-56 bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-4 flex-column cursor-pointer transition duration-200 hover:scale-105 hover:-translate-y-1.5 shadow-md border border-gray-800'
+      className={`w-56 rounded-2xl p-4 flex-column cursor-pointer transition duration-200
+        hover:scale-105 hover:-translate-y-1.5 shadow-lg border border-white/10
+        bg-gray-800/90 backdrop-blur-sm`}
       onClick={handleOpenModal}
     >
       <div className='flex flex-row gap-3 mb-2 items-center'>
@@ -48,11 +50,11 @@ const Card = ({
           className='rounded-full ring-1 ring-white/10'
         />
         <div>
-          <h2 className='text-lg uppercase font-bold text-white'>{symbol}</h2>
-          <h1 className='text-sm text-gray-300 line-clamp-1'>{name}</h1>
+          <h2 className='text-lg uppercase font-bold text-slate-100'>{symbol}</h2>
+          <h1 className='text-sm text-slate-300 line-clamp-1'>{name}</h1>
         </div>
       </div>
-      <h2 className='font-bold text-2xl ml-4 text-white'>
+      <h2 className='font-bold text-2xl ml-4 text-slate-100'>
         {formatNumberToMoney(currentValue)}
       </h2>
       <div className='flex flex-row justify-end items-center gap-2'>
@@ -70,7 +72,7 @@ const Card = ({
           height={12}
         />
       </div>
-      <h3 className='text-xs ml-auto text-gray-400 font-medium w-32 text-right mt-1'>
+      <h3 className='text-xs ml-auto text-slate-400 font-medium w-32 text-right mt-1'>
         Price change in % in the last 24 hours
       </h3>
     </div>
