@@ -37,7 +37,7 @@ const CryptoList = () => {
           Search by Crypto
         </label>
         <input
-          className='mx-3 p-2 w-72 rounded-xl border border-white/10 outline-none ring-1 ring-transparent bg-gray-800/70 backdrop-blur-sm text-white placeholder:text-white/60 transition-colors duration-200 ease-out'
+          className='mx-3 p-2 w-72 rounded-xl border border-white/10 outline-none ring-1 ring-transparent bg-gray-800/70 backdrop-blur-sm text-white placeholder:text-white/60 transition-colors duration-200 ease-out focus:border-white/30 focus:ring-white/30'
           id='crypto-name'
           value={search}
           placeholder='e.g. Bitcoin'
