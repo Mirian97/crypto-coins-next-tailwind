@@ -18,9 +18,12 @@ const Hero = () => (
         className='md:flex hidden'
       />
       <a href='#view-cryptocurrencies'>
-        <button className='bg-gradient-to-br from-blue-950 to-blue-500 duration-500 font-semibold text-lg flex flex-row gap-1.5 items-center border-2 border-solid border-white text-white py-2.5 px-5 uppercase rounded-xl hover:opacity-90 hover:scale-105 transition-all'>
-          <BadgeDollarSign size={28} />
-          See cryptos
+        <button
+          aria-label='See cryptocurrencies'
+          className='inline-flex items-center gap-3 px-6 py-3 rounded-xl text-lg font-semibold text-white bg-gradient-to-r from-indigo-950 via-blue-900 to-blue-900 shadow-lg hover:shadow-xl transform transition-all duration-200 hover:scale-105 active:scale-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-300 border-white border'
+        >
+          <span className='leading-none'>See Cryptos</span>
+          <BadgeDollarSign size={24} />
         </button>
       </a>
     </div>
