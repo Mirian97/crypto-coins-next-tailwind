@@ -32,14 +32,15 @@ const CryptoList = () => {
 
   return (
     <div id='view-cryptocurrencies'>
-      <div className='w-full flex flex-col justify-center items-center mb-6'>
-        <label htmlFor='crypto-name' className='text-white font-bold text-lg w-72'>
-          Search by crypto name:
+      <div className='w-full flex flex-col justify-center gap-1.5 items-center mb-6'>
+        <label htmlFor='crypto-name' className='text-white ml-2.5 font-bold w-72 text-sm'>
+          Search by Crypto
         </label>
         <input
-          className='mx-3 p-2 w-72 rounded-xl border-2 outline-none ring-blue-900 border-blue-900 focus:border-sky-500 focus:ring-sky-500 ring-1'
+          className='mx-3 p-2 w-72 rounded-xl border border-white/10 outline-none ring-1 ring-transparent bg-gray-800/70 backdrop-blur-sm text-white placeholder:text-white/60 transition-colors duration-200 ease-out focus:border-white/30 focus:ring-white/30'
           id='crypto-name'
           value={search}
+          placeholder='e.g. Bitcoin'
           onChange={(e) => handleSearch(e.target.value)}
         />
       </div>

@@ -13,7 +13,6 @@ const Home = async () => {
     <>
       <Hero />
       <Suspense fallback={<LoadingCrypto />}>
-        {/* @ts-ignore */}
         <CryptoList />
       </Suspense>
       <Modal openModal={openModal} {...currentCrypto} closeModal={handleToggleModal} />
