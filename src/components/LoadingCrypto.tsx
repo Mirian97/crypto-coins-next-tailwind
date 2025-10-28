@@ -4,7 +4,7 @@ import Spinner from '~/svg/spinner.svg'
 
 const LoadingCrypto = () => (
   <div className='max-w-full flex flex-row justify-center py-5'>
-    <Image src={Spinner} width={100} height={100} alt='loading icon' />
+    <Image src={Spinner} width={200} height={200} alt='loading icon' />
   </div>
 )
 
