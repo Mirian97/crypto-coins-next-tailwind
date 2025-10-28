@@ -1,5 +1,4 @@
 [build]
-  publish = "dist" # ou sua pasta de build
   command = "pnpm install && pnpm build"
 
 [build.environment]
